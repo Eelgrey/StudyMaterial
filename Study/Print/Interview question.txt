@@ -1,0 +1,55 @@
+*********************************** HIbernate/JPA **********************************
+Que 1. Create two hibernate entity classes Users and Roles. And also create 3 properties id, name, age in Users class and id, name in Roles class.
+Que 2. Create one to many relationship between Users and Roles like a User can have multiple roles (user, admin, manager).
+Que 3. Create an api to add a user in database. You have to create following things(Controller, Service, JPA Repository)
+Que 4. check if the user has manager role or not using java 8 stream api only.
+
+public boolean haveManagerRole(User user)
+{
+    
+    // complete this method    
+
+}
+Que 5. Find all users who's role is manager using JPA repository
+Que 6. Create one to many relationship between Users and Roles like a User can have multiple roles (user, admin, manager).
+Que 7. Create an api to add a user in database. You have to create following things(Controller, Service, JPA Repository)
+
+
+************************** Sorting using streams:*********************************
+
+Stream<String> wordStream = Stream.of("A","C","E","B","D");
+wordStream.sorted().forEach(System.out::println);   //ascending
+wordStream.sorted( Comparator.reverseOrder()).forEach(System.out::println);     //descending
+
+List < Employee > employeesSortedList1 = employees.stream()
+            .sorted((o1, o2) -> (int)(o2.getSalary() - o1.getSalary())).collect(Collectors.toList());
+        System.out.println(employeesSortedList1);
+
+        List < Employee > employeesSortedList2 = employees.stream()
+            .sorted(Comparator.comparingLong(Employee::getSalary).reversed()).collect(Collectors.toList()); //ascending order
+        System.out.println(employeesSortedList2);
+         
+
+
+***************** find max/min using streams ********************
+       // get a user with the minimum age
+        User user1 = users.stream()
+                        .min(Comparator.comparingInt(User::getAge))
+                        .get();
+ 
+        System.out.println("User with minimum age: " + user1);
+ 
+        // get a user with the maximum age
+        User user2 = users.stream()
+                        .max(Comparator.comparingInt(User::getAge))
+                        .get();
+						
+						
+						
+************************* users who's age is greater than 30. *******************
+public List<User> filterByAge(List<User> users)
+{
+    
+    List<Users> = users.stream().filter(u->(u.age>30)).collect(Collectors.tolist());
+
+}
