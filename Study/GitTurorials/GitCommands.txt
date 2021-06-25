@@ -1,0 +1,2513 @@
+apurva.misra@IN01L0201000171 MINGW64 ~
+$ notepad++ ~/.bash_profile
+
+apurva.misra@IN01L0201000171 MINGW64 ~
+$ git config --global core.editor "notepad++ -multiInst -nosession"
+
+apurva.misra@IN01L0201000171 MINGW64 ~
+$  git config --global -e
+
+apurva.misra@IN01L0201000171 MINGW64 ~
+$  git config --global diff.tool p4merge
+
+apurva.misra@IN01L0201000171 MINGW64 ~
+$  git config --global difftool.p4merge.path "C:/Program Files/Perforce/p4merge.exe"
+
+apurva.misra@IN01L0201000171 MINGW64 ~
+$  git config --global difftool.prompt false
+
+apurva.misra@IN01L0201000171 MINGW64 ~
+$  git config --global merge.tool p4merge
+
+apurva.misra@IN01L0201000171 MINGW64 ~
+$  git config --global mergetool.p4merge.path "C:/Program Files/Perforce/p4merge.exe"
+
+apurva.misra@IN01L0201000171 MINGW64 ~
+$  git config --global mergetool.prompt false
+
+apurva.misra@IN01L0201000171 MINGW64 ~
+$ d:
+bash: d:: command not found
+
+apurva.misra@IN01L0201000171 MINGW64 ~
+$ cd d:/
+
+apurva.misra@IN01L0201000171 MINGW64 /d
+$ cd workspace/GitLocal/
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal
+$ cd ..
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace
+$ cd GitLocal/
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal
+$ git init
+Initialized empty Git repository in D:/workspace/GitLocal/.git/
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master)
+$ ls -al
+total 4
+drwxr-xr-x 1 apurva.misra 1049089 0 Mar  3 00:42 ./
+drwxr-xr-x 1 apurva.misra 1049089 0 Mar  3 00:41 ../
+drwxr-xr-x 1 apurva.misra 1049089 0 Mar  3 00:42 .git/
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master)
+$ start notepad++ TextFile1.txt
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master)
+$ git add TextFile1.txt
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master)
+$ git commit -m "This is my first commit !"
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master)
+$ git log
+commit 649fc56761689cc6f4e6ec9cfa3d00e37056c0db (HEAD -> master)
+Author: Apurva <apurvamisra502@gmail.com>
+Date:   Wed Mar 3 01:09:21 2021 +0530
+
+    This is my first commit !
+
+########## tells which all file will be tracked by git ###################
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master)
+$ git ls-files
+TextFile1.txt
+
+############ creates new files ###############
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master)
+$ touch newFile
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master)
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        newFile
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master)
+$ git ls-files
+TextFile1.txt
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master)
+$ git rm -rf newFile
+fatal: pathspec 'newFile' did not match any files
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master)
+$ rm -rf newFile
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   TextFile1.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+**************** add files along with commiting ********************
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master)
+$ git commit -am "This is modified file 2"
+[master f621639] This is modified file 2
+ 1 file changed, 2 insertions(+)
+ 
+ ************** another modification ****************
+ apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master)
+$ start notepad++ TextFile1.txt
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   TextFile1.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+
+ ******************* removes file from the staging area ************
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master)
+$ git reset HEAD TextFile1.txt
+
+
+************** last commited code on git *************
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master)
+$ git checkout -- TextFile1.txt
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master)
+$ cat TextFile1.txt
+hello ! this is textFile1 !
+This files is modified !
+New modification
+
+
+*************** opens documentaion section for git log command **************
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master)
+$ git help log
+
+****************** git log *****************************
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master)
+$ git log
+commit 53cb3587c232d9511a2ff0dfe6d25273f182cbcc (HEAD -> master)
+Author: Apurva <apurvamisra502@gmail.com>
+Date:   Wed Mar 3 02:11:27 2021 +0530
+
+    This is modified file 2
+
+commit f621639159a174dd9660a640941e9fa2c02031e0
+Author: Apurva <apurvamisra502@gmail.com>
+Date:   Wed Mar 3 01:15:34 2021 +0530
+
+    This is modified file 2
+
+commit 649fc56761689cc6f4e6ec9cfa3d00e37056c0db
+Author: Apurva <apurvamisra502@gmail.com>
+Date:   Wed Mar 3 01:09:21 2021 +0530
+
+    This is my first commit !
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master)
+$ git log --online
+fatal: unrecognized argument: --online
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master)
+$ git log --oneline
+53cb358 (HEAD -> master) This is modified file 2
+f621639 This is modified file 2
+649fc56 This is my first commit !
+
+
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master)
+$ git log --graph
+* commit 53cb3587c232d9511a2ff0dfe6d25273f182cbcc (HEAD -> master)
+| Author: Apurva <apurvamisra502@gmail.com>
+| Date:   Wed Mar 3 02:11:27 2021 +0530
+|
+|     This is modified file 2
+|
+* commit f621639159a174dd9660a640941e9fa2c02031e0
+| Author: Apurva <apurvamisra502@gmail.com>
+| Date:   Wed Mar 3 01:15:34 2021 +0530
+|
+|     This is modified file 2
+|
+* commit 649fc56761689cc6f4e6ec9cfa3d00e37056c0db
+  Author: Apurva <apurvamisra502@gmail.com>
+  Date:   Wed Mar 3 01:09:21 2021 +0530
+
+      This is my first commit !
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master)
+$ git log --decorate
+commit 53cb3587c232d9511a2ff0dfe6d25273f182cbcc (HEAD -> master)
+Author: Apurva <apurvamisra502@gmail.com>
+Date:   Wed Mar 3 02:11:27 2021 +0530
+
+    This is modified file 2
+
+commit f621639159a174dd9660a640941e9fa2c02031e0
+Author: Apurva <apurvamisra502@gmail.com>
+Date:   Wed Mar 3 01:15:34 2021 +0530
+
+    This is modified file 2
+
+commit 649fc56761689cc6f4e6ec9cfa3d00e37056c0db
+Author: Apurva <apurvamisra502@gmail.com>
+Date:   Wed Mar 3 01:09:21 2021 +0530
+
+    This is my first commit !
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master)
+$ git log --all
+commit 53cb3587c232d9511a2ff0dfe6d25273f182cbcc (HEAD -> master)
+Author: Apurva <apurvamisra502@gmail.com>
+Date:   Wed Mar 3 02:11:27 2021 +0530
+
+    This is modified file 2
+
+commit f621639159a174dd9660a640941e9fa2c02031e0
+Author: Apurva <apurvamisra502@gmail.com>
+Date:   Wed Mar 3 01:15:34 2021 +0530
+
+    This is modified file 2
+
+commit 649fc56761689cc6f4e6ec9cfa3d00e37056c0db
+Author: Apurva <apurvamisra502@gmail.com>
+Date:   Wed Mar 3 01:09:21 2021 +0530
+
+    This is my first commit !
+	
+******************* create alias command names ******************************
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master)
+$ git config --global alias.logBranchInfo "log --graph --decorate --all"
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master)
+$ git config --global --list
+user.name=Apurva
+user.email=apurvamisra502@gmail.com
+core.editor=notepad++ -multiInst -nosession
+diff.tool=p4merge
+difftool.p4merge.path=C:/Program Files/Perforce/p4merge.exe
+difftool.prompt=false
+merge.tool=p4merge
+mergetool.p4merge.path=C:/Program Files/Perforce/p4merge.exe
+mergetool.prompt=false
+alias.logbranchinfo=log --graph --decorate --all
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master)
+$ git logbranchinfo
+* commit 53cb3587c232d9511a2ff0dfe6d25273f182cbcc (HEAD -> master)
+| Author: Apurva <apurvamisra502@gmail.com>
+| Date:   Wed Mar 3 02:11:27 2021 +0530
+|
+|     This is modified file 2
+|
+* commit f621639159a174dd9660a640941e9fa2c02031e0
+| Author: Apurva <apurvamisra502@gmail.com>
+| Date:   Wed Mar 3 01:15:34 2021 +0530
+|
+|     This is modified file 2
+|
+* commit 649fc56761689cc6f4e6ec9cfa3d00e37056c0db
+  Author: Apurva <apurvamisra502@gmail.com>
+  Date:   Wed Mar 3 01:09:21 2021 +0530
+
+      This is my first commit !
+
+
+*********** alias to specific files *******************************
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master)
+$ git logbranchinfo -- TextFile1.txT
+
+
+****************** renaming the commited file ******************
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master)
+$ git commit -a -m "Commit Before rename"
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        Rename File.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master)
+$ git add Rename\ File.txt
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master)
+$ git commit -a -m "Commit Before rename"
+[master 6c913fc] Commit Before rename
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 Rename File.txt
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master)
+$ ls
+'Rename File.txt'   TextFile1.txt
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master)
+$ git mv Rename\ File.txt DemoRename.txt
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master)
+$ ls
+DemoRename.txt  TextFile1.txt
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master)
+$ git commit -m "after reanme commit"
+[master 906823d] after reanme commit
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ rename Rename File.txt => DemoRename.txt (100%)
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master)
+$ ls
+DemoRename.txt  TextFile1.txt
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+
+************** delete file via git *************************
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master)
+$ ls
+DemoRename.txt  TextFile1.txt
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master)
+$ git log --oneline
+906823d (HEAD -> master) after reanme commit
+6c913fc Commit Before rename
+53cb358 This is modified file 2
+f621639 This is modified file 2
+649fc56 This is my first commit !
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master)
+$ ls
+DemoRename.txt  TextFile1.txt
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master)
+$ git rm DemoRename.txt
+rm 'DemoRename.txt'
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        deleted:    DemoRename.txt
+
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master)
+$ git commit -am "After deletion commit"
+[master 84ae743] After deletion commit
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ delete mode 100644 DemoRename.txt
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+
+******************* delete rename outside git ************************
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master)
+$ mv TextFile1.txt TextRename.txt
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   Rename.txt
+
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        deleted:    TextFile1.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        TextRename.txt
+
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master)
+$ git add -u
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   Rename.txt
+        deleted:    TextFile1.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        TextRename.txt
+
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master)
+$ git add -A
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   Rename.txt
+        renamed:    TextFile1.txt -> TextRename.txt
+
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master)
+$ git commit -m "Delete command / rename command tested"
+[master 60c8b32] Delete command / rename command tested
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 Rename.txt
+ rename TextFile1.txt => TextRename.txt (100%)
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+
+************************ git ignore files ********************************
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master)
+$ git notepad++ application.log
+git: 'notepad++' is not a git command. See 'git --help'.
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master)
+$ notepad++ application.log
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master)
+$ cat application.log
+This is the log file....
+printing ................
+printing ................
+printing ................
+printing ................
+printing ................
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master)
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        application.log
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master)
+$ touch .gitignore
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master)
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .gitignore
+        application.log
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master)
+$ notepad++ .git
+.git/       .gitignore
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master)
+$ notepad++ .git
+.git/       .gitignore
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master)
+$ notepad++ .gitignore
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master)
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .gitignore
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master)
+$ git add .gitignore
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master)
+$ git commit "adding the ignore file"
+error: pathspec 'adding the ignore file' did not match any file(s) known to git
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master)
+$ git commit -m "adding the ignore file"
+[master 50ec055] adding the ignore file
+ 1 file changed, 1 insertion(+)
+ create mode 100644 .gitignore
+ 
+ 
+ *************** diff in files/ commits *****************
+ apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master)
+$ git diff 50ec055 f621639
+diff --git a/.gitignore b/.gitignore
+deleted file mode 100644
+index bf0824e..0000000
+--- a/.gitignore
++++ /dev/null
+@@ -1 +0,0 @@
+-*.log
+\ No newline at end of file
+diff --git a/Rename.txt b/Rename.txt
+deleted file mode 100644
+index e69de29..0000000
+diff --git a/TextRename.txt b/TextFile1.txt
+similarity index 75%
+rename from TextRename.txt
+rename to TextFile1.txt
+index b232470..4c3aaa6 100644
+--- a/TextRename.txt
++++ b/TextFile1.txt
+@@ -1,3 +1,3 @@
+ hello ! this is textFile1 !
+ This files is modified !
+-New modification
++
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master)
+$ notepad++ TextRename.txt
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   TextRename.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master)
+$ git diff
+diff --git a/TextRename.txt b/TextRename.txt
+index b232470..77f8f30 100644
+--- a/TextRename.txt
++++ b/TextRename.txt
+@@ -1,3 +1,5 @@
+ hello ! this is textFile1 !
+ This files is modified !
+ New modification
++
++Check the differences
+
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master)
+$ git diff TextRename.txt
+diff --git a/TextRename.txt b/TextRename.txt
+index b232470..77f8f30 100644
+--- a/TextRename.txt
++++ b/TextRename.txt
+@@ -1,3 +1,5 @@
+ hello ! this is textFile1 !
+ This files is modified !
+ New modification
++
++Check the differences
+
+
+***************** open p4merge to check differences **************
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master)
+$ git difftool TextRename.txt
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master)
+$ git difftool
+
+*************** branching/merge/delete ************************************
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master)
+$ git branch
+* master
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master)
+$ git checkout -b NewBranch
+Switched to a new branch 'NewBranch'
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (NewBranch)
+$ notepad++ TextRename.txt
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (NewBranch)
+$ git add .
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (NewBranch)
+$ git commit -m "Adding branch changes !"
+[NewBranch 1074904] Adding branch changes !
+ 1 file changed, 5 insertions(+)
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (NewBranch)
+$ git status
+On branch NewBranch
+nothing to commit, working tree clean
+
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (NewBranch)
+$ git log --oneline
+1074904 (HEAD -> NewBranch) Adding branch changes !
+50ec055 (master) adding the ignore file
+60c8b32 Delete command / rename command tested
+84ae743 After deletion commit
+906823d after reanme commit
+6c913fc Commit Before rename
+53cb358 This is modified file 2
+f621639 This is modified file 2
+649fc56 This is my first commit !
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (NewBranch)
+$ git checkout master
+Switched to branch 'master'
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master)
+$ git log --oneline --all
+1074904 (NewBranch) Adding branch changes !
+50ec055 (HEAD -> master) adding the ignore file
+60c8b32 Delete command / rename command tested
+84ae743 After deletion commit
+906823d after reanme commit
+6c913fc Commit Before rename
+53cb358 This is modified file 2
+f621639 This is modified file 2
+649fc56 This is my first commit !
+
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master)
+$ git merge NewBranch
+Updating 50ec055..1074904
+Fast-forward
+ TextRename.txt | 5 +++++
+ 1 file changed, 5 insertions(+)
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master)
+$ git log --oneline --all
+1074904 (HEAD -> master, NewBranch) Adding branch changes !
+50ec055 adding the ignore file
+60c8b32 Delete command / rename command tested
+84ae743 After deletion commit
+906823d after reanme commit
+6c913fc Commit Before rename
+53cb358 This is modified file 2
+f621639 This is modified file 2
+649fc56 This is my first commit !
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master)
+$ git branch -d NewBranch
+Deleted branch NewBranch (was 1074904).
+
+
+*********************** resolving conflicts ***********************************
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master)
+$ git checkout NewMerge
+Switched to branch 'NewMerge'
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (NewMerge)
+$ notepad++ TextRename.txt
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (NewMerge)
+$ git commit -am "Commit from merge branch"
+[NewMerge 1dbc90a] Commit from merge branch
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (NewMerge)
+$ git checkout master
+Switched to branch 'master'
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master)
+$ notepad++ TextRename.txt
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master)
+$ git commit -am "Commit from mater branch"
+[master 50aac34] Commit from mater branch
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master)
+$ git branch -a
+  NewMerge
+* master
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master)
+$ git merge NewMerge
+Auto-merging TextRename.txt
+CONFLICT (content): Merge conflict in TextRename.txt
+Automatic merge failed; fix conflicts and then commit the result.
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master|MERGING)
+$ git mergetool
+Merging:
+TextRename.txt
+
+Normal merge conflict for 'TextRename.txt':
+  {local}: modified file
+  {remote}: modified file
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master|MERGING)
+$ git merge NewMerge
+fatal: You have not concluded your merge (MERGE_HEAD exists).
+Please, commit your changes before you merge.
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master|MERGING)
+$ git commit -am "Resolving conflicts~~"
+[master e5917c5] Resolving conflicts~~
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master)
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        TextRename.txt.orig
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master)
+$ notepad++ .gitignore
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   .gitignore
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master)
+$ git commit -am "ignoring orig file to merge"
+[master d8b8ce4] ignoring orig file to merge
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master)
+$ ls
+Rename.txt  TextRename.txt  TextRename.txt.orig  application.log
+
+
+************************* tagging in git *****************************
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master)
+$ git tag newTag
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master)
+$ git log --oneline
+d8b8ce4 (HEAD -> master, tag: newTag) ignoring orig file to merge
+e5917c5 Resolving conflicts~~
+50aac34 Commit from mater branch
+1dbc90a (NewMerge) Commit from merge branch
+6d13a1a Git merge from master commit
+1074904 Adding branch changes !
+50ec055 adding the ignore file
+60c8b32 Delete command / rename command tested
+84ae743 After deletion commit
+906823d after reanme commit
+6c913fc Commit Before rename
+53cb358 This is modified file 2
+f621639 This is modified file 2
+649fc56 This is my first commit !
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master)
+$ git tag -d newTag
+Deleted tag 'newTag' (was d8b8ce4)
+
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master)
+$ git tag -a v1.0 -m "Snapshot release v1.0"
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master)
+$ git log --oneline
+d8b8ce4 (HEAD -> master, tag: v1.0) ignoring orig file to merge
+e5917c5 Resolving conflicts~~
+50aac34 Commit from mater branch
+1dbc90a (NewMerge) Commit from merge branch
+6d13a1a Git merge from master commit
+1074904 Adding branch changes !
+50ec055 adding the ignore file
+60c8b32 Delete command / rename command tested
+84ae743 After deletion commit
+906823d after reanme commit
+6c913fc Commit Before rename
+53cb358 This is modified file 2
+f621639 This is modified file 2
+649fc56 This is my first commit !
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master)
+$ git show v1.0
+tag v1.0
+Tagger: Apurva <apurvamisra502@gmail.com>
+Date:   Wed Mar 3 21:41:16 2021 +0530
+
+Snapshot release v1.0
+
+commit d8b8ce4adc8e40c7f525ab28168b2a25332ffdb1 (HEAD -> master, tag: v1.0)
+Author: Apurva <apurvamisra502@gmail.com>
+Date:   Wed Mar 3 21:15:07 2021 +0530
+
+    ignoring orig file to merge
+
+diff --git a/.gitignore b/.gitignore
+index bf0824e..490a1a0 100644
+--- a/.gitignore
++++ b/.gitignore
+@@ -1 +1,2 @@
+-*.log
+\ No newline at end of file
++*.log
++*.orig
+\ No newline at end of file
+
+
+********************* git stash command ********************************
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master)
+$ ls
+Rename.txt  TextRename.txt  TextRename.txt.orig  application.log
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master)
+$ notepad++ Rename.txt
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   Rename.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master)
+$ git stash
+Saved working directory and index state WIP on master: d8b8ce4 ignoring orig file to merge
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master)
+$ git stash list
+stash@{0}: WIP on master: d8b8ce4 ignoring orig file to merge
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master)
+$ notepad++ TextRename.txt
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master)
+$ git commit -am "Stash check in master"
+[master 6af0c1e] Stash check in master
+ 1 file changed, 1 insertion(+)
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master)
+$ git stash pop
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   Rename.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+Dropped refs/stash@{0} (7a7cb2dbb526919216975e6806d0c22afeeff321)
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master)
+$ git add .
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   Rename.txt
+
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master)
+$ notepad++ Rename.txt
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   Rename.txt
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   Rename.txt
+
+
+*********************** git reset/reflog ***************************************
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master)
+$ git log --oneline
+6af0c1e (HEAD -> master) Stash check in master
+d8b8ce4 (tag: v1.0) ignoring orig file to merge
+e5917c5 Resolving conflicts~~
+50aac34 Commit from mater branch
+1dbc90a (NewMerge) Commit from merge branch
+6d13a1a Git merge from master commit
+1074904 Adding branch changes !
+50ec055 adding the ignore file
+60c8b32 Delete command / rename command tested
+84ae743 After deletion commit
+906823d after reanme commit
+6c913fc Commit Before rename
+53cb358 This is modified file 2
+f621639 This is modified file 2
+649fc56 This is my first commit !
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master)
+$ git reset e5917c5 --soft
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master)
+$ git log --oneline
+e5917c5 (HEAD -> master) Resolving conflicts~~
+50aac34 Commit from mater branch
+1dbc90a (NewMerge) Commit from merge branch
+6d13a1a Git merge from master commit
+1074904 Adding branch changes !
+50ec055 adding the ignore file
+60c8b32 Delete command / rename command tested
+84ae743 After deletion commit
+906823d after reanme commit
+6c913fc Commit Before rename
+53cb358 This is modified file 2
+f621639 This is modified file 2
+649fc56 This is my first commit !
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   .gitignore
+        modified:   Rename.txt
+        modified:   TextRename.txt
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   Rename.txt
+
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master)
+$ git reset 6d13a1a --soft
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   .gitignore
+        modified:   Rename.txt
+        modified:   TextRename.txt
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   Rename.txt
+
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master)
+$ git log --oneline
+6d13a1a (HEAD -> master) Git merge from master commit
+1074904 Adding branch changes !
+50ec055 adding the ignore file
+60c8b32 Delete command / rename command tested
+84ae743 After deletion commit
+906823d after reanme commit
+6c913fc Commit Before rename
+53cb358 This is modified file 2
+f621639 This is modified file 2
+649fc56 This is my first commit !
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master)
+$ git ^C
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master)
+$ git reset 6c913fc --hard
+HEAD is now at 6c913fc Commit Before rename
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master)
+$ git log --oneline
+6c913fc (HEAD -> master) Commit Before rename
+53cb358 This is modified file 2
+f621639 This is modified file 2
+649fc56 This is my first commit !
+
+********************** git reflog ***********************************************
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master)
+$ git reflog
+6c913fc (HEAD -> master) HEAD@{0}: reset: moving to 6c913fc
+6d13a1a HEAD@{1}: reset: moving to 6d13a1a
+e5917c5 HEAD@{2}: reset: moving to e5917c5
+6af0c1e HEAD@{3}: commit: Stash check in master
+d8b8ce4 (tag: v1.0) HEAD@{4}: reset: moving to HEAD
+d8b8ce4 (tag: v1.0) HEAD@{5}: commit: ignoring orig file to merge
+e5917c5 HEAD@{6}: commit (merge): Resolving conflicts~~
+50aac34 HEAD@{7}: commit: Commit from mater branch
+6d13a1a HEAD@{8}: checkout: moving from NewMerge to master
+1dbc90a (NewMerge) HEAD@{9}: commit: Commit from merge branch
+1074904 HEAD@{10}: checkout: moving from master to NewMerge
+6d13a1a HEAD@{11}: commit: Git merge from master commit
+1074904 HEAD@{12}: checkout: moving from NewMerge to master
+1074904 HEAD@{13}: checkout: moving from master to NewMerge
+1074904 HEAD@{14}: merge NewBranch: Fast-forward
+50ec055 HEAD@{15}: checkout: moving from NewBranch to master
+1074904 HEAD@{16}: commit: Adding branch changes !
+50ec055 HEAD@{17}: checkout: moving from master to NewBranch
+50ec055 HEAD@{18}: commit: adding the ignore file
+60c8b32 HEAD@{19}: commit: Delete command / rename command tested
+84ae743 HEAD@{20}: commit: After deletion commit
+906823d HEAD@{21}: commit: after reanme commit
+6c913fc (HEAD -> master) HEAD@{22}: commit: Commit Before rename
+53cb358 HEAD@{23}: reset: moving to HEAD
+53cb358 HEAD@{24}: commit: This is modified file 2
+f621639 HEAD@{25}: commit: This is modified file 2
+649fc56 HEAD@{26}: commit (initial): This is my first commit !
+
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master)
+$ git reflog
+6c913fc (HEAD -> master) HEAD@{0}: reset: moving to 6c913fc
+6d13a1a HEAD@{1}: reset: moving to 6d13a1a
+e5917c5 HEAD@{2}: reset: moving to e5917c5
+6af0c1e HEAD@{3}: commit: Stash check in master
+d8b8ce4 (tag: v1.0) HEAD@{4}: reset: moving to HEAD
+d8b8ce4 (tag: v1.0) HEAD@{5}: commit: ignoring orig file to merge
+e5917c5 HEAD@{6}: commit (merge): Resolving conflicts~~
+50aac34 HEAD@{7}: commit: Commit from mater branch
+6d13a1a HEAD@{8}: checkout: moving from NewMerge to master
+1dbc90a (NewMerge) HEAD@{9}: commit: Commit from merge branch
+1074904 HEAD@{10}: checkout: moving from master to NewMerge
+6d13a1a HEAD@{11}: commit: Git merge from master commit
+1074904 HEAD@{12}: checkout: moving from NewMerge to master
+1074904 HEAD@{13}: checkout: moving from master to NewMerge
+1074904 HEAD@{14}: merge NewBranch: Fast-forward
+50ec055 HEAD@{15}: checkout: moving from NewBranch to master
+1074904 HEAD@{16}: commit: Adding branch changes !
+50ec055 HEAD@{17}: checkout: moving from master to NewBranch
+50ec055 HEAD@{18}: commit: adding the ignore file
+60c8b32 HEAD@{19}: commit: Delete command / rename command tested
+84ae743 HEAD@{20}: commit: After deletion commit
+906823d HEAD@{21}: commit: after reanme commit
+6c913fc (HEAD -> master) HEAD@{22}: commit: Commit Before rename
+53cb358 HEAD@{23}: reset: moving to HEAD
+53cb358 HEAD@{24}: commit: This is modified file 2
+f621639 HEAD@{25}: commit: This is modified file 2
+649fc56 HEAD@{26}: commit (initial): This is my first commit !
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master)
+$ git reset --hard 6af0c1e
+HEAD is now at 6af0c1e Stash check in master
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master)
+$ git reflog
+6af0c1e (HEAD -> master) HEAD@{0}: reset: moving to 6af0c1e
+6c913fc HEAD@{1}: reset: moving to 6c913fc
+6d13a1a HEAD@{2}: reset: moving to 6d13a1a
+e5917c5 HEAD@{3}: reset: moving to e5917c5
+6af0c1e (HEAD -> master) HEAD@{4}: commit: Stash check in master
+d8b8ce4 (tag: v1.0) HEAD@{5}: reset: moving to HEAD
+d8b8ce4 (tag: v1.0) HEAD@{6}: commit: ignoring orig file to merge
+e5917c5 HEAD@{7}: commit (merge): Resolving conflicts~~
+50aac34 HEAD@{8}: commit: Commit from mater branch
+6d13a1a HEAD@{9}: checkout: moving from NewMerge to master
+1dbc90a (NewMerge) HEAD@{10}: commit: Commit from merge branch
+1074904 HEAD@{11}: checkout: moving from master to NewMerge
+6d13a1a HEAD@{12}: commit: Git merge from master commit
+1074904 HEAD@{13}: checkout: moving from NewMerge to master
+1074904 HEAD@{14}: checkout: moving from master to NewMerge
+1074904 HEAD@{15}: merge NewBranch: Fast-forward
+50ec055 HEAD@{16}: checkout: moving from NewBranch to master
+1074904 HEAD@{17}: commit: Adding branch changes !
+50ec055 HEAD@{18}: checkout: moving from master to NewBranch
+50ec055 HEAD@{19}: commit: adding the ignore file
+60c8b32 HEAD@{20}: commit: Delete command / rename command tested
+84ae743 HEAD@{21}: commit: After deletion commit
+906823d HEAD@{22}: commit: after reanme commit
+6c913fc HEAD@{23}: commit: Commit Before rename
+53cb358 HEAD@{24}: reset: moving to HEAD
+53cb358 HEAD@{25}: commit: This is modified file 2
+f621639 HEAD@{26}: commit: This is modified file 2
+649fc56 HEAD@{27}: commit (initial): This is my first commit !
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master)
+$ git log --oneline
+6af0c1e (HEAD -> master) Stash check in master
+d8b8ce4 (tag: v1.0) ignoring orig file to merge
+e5917c5 Resolving conflicts~~
+50aac34 Commit from mater branch
+1dbc90a (NewMerge) Commit from merge branch
+6d13a1a Git merge from master commit
+1074904 Adding branch changes !
+50ec055 adding the ignore file
+60c8b32 Delete command / rename command tested
+84ae743 After deletion commit
+906823d after reanme commit
+6c913fc Commit Before rename
+53cb358 This is modified file 2
+f621639 This is modified file 2
+649fc56 This is my first commit !
+
+******************************* linking git local to remote repo ****************************
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master)
+$ git remote -v
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master)
+$ git remote add origin https://github.com/Eelgrey/DemoGit.git
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master)
+$ git remote -v
+origin  https://github.com/Eelgrey/DemoGit.git (fetch)
+origin  https://github.com/Eelgrey/DemoGit.git (push)
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master)
+$ git push -u origin master --tag
+Enumerating objects: 40, done.
+Counting objects: 100% (40/40), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (33/33), done.
+Writing objects: 100% (40/40), 3.50 KiB | 132.00 KiB/s, done.
+Total 40 (delta 14), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (14/14), done.
+To https://github.com/Eelgrey/DemoGit.git
+ * [new branch]      master -> master
+ * [new tag]         v1.0 -> v1.0
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+
+
+
+
+************************* setting up SSH communication ******************************
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master)
+$ pwd
+/d/workspace/GitLocal
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master)
+$ mkdir .ssh
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal (master)
+$ cd .ssh/
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/.ssh (master)
+$ ssh $ ssh-keygen -t  rsa -C "apurvamisra502@gmail.com"
+ssh: Could not resolve hostname $: Name or service not known
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/.ssh (master)
+$ ssh-keygen -t  rsa -C "apurvamisra502@gmail.com"
+Generating public/private rsa key pair.
+Enter file in which to save the key (/c/Users/apurva.misra/.ssh/id_rsa):
+Created directory '/c/Users/apurva.misra/.ssh'.
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Passphrases do not match.  Try again.
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /c/Users/apurva.misra/.ssh/id_rsa
+Your public key has been saved in /c/Users/apurva.misra/.ssh/id_rsa.pub
+The key fingerprint is:
+SHA256:ULNzQhUMo2PzNYQ2f7vrbjEzyaswDyP6yZALTTkP4CY apurvamisra502@gmail.com
+The key's randomart image is:
++---[RSA 3072]----+
+|        *=+.     |
+|       ++=.      |
+|  .   *.+o+      |
+| . . o = =...    |
+|E o =   S  o o   |
+| o o =      O    |
+|  . + o =    B   |
+|   . = o *  +    |
+|    o.+   o=+.   |
++----[SHA256]-----+
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/.ssh (master)
+$ ls
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/.ssh (master)
+$ ls -al
+total 4
+drwxr-xr-x 1 apurva.misra 1049089 0 Mar  3 22:42 ./
+drwxr-xr-x 1 apurva.misra 1049089 0 Mar  3 22:42 ../
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/.ssh (master)
+$ c:
+bash: c:: command not found
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/.ssh (master)
+$ c:/
+bash: c:/: Is a directory
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/.ssh (master)
+$ C:/
+bash: C:/: Is a directory
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/.ssh (master)
+$ cd c:/
+
+apurva.misra@IN01L0201000171 MINGW64 /c
+$ cd Users/apurva.misra/.ssh/
+
+apurva.misra@IN01L0201000171 MINGW64 ~/.ssh
+$ ls -al
+total 21
+drwxr-xr-x 1 apurva.misra 1049089    0 Mar  3 22:44 ./
+drwxr-xr-x 1 apurva.misra 1049089    0 Mar  3 22:44 ../
+-rw-r--r-- 1 apurva.misra 1049089 2610 Mar  3 22:44 id_rsa
+-rw-r--r-- 1 apurva.misra 1049089  578 Mar  3 22:44 id_rsa.pub
+
+apurva.misra@IN01L0201000171 MINGW64 ~/.ssh
+$ notepad++ id_rsa.pub
+
+apurva.misra@IN01L0201000171 MINGW64 ~/.ssh
+$ ssh -T git@github.com
+The authenticity of host 'github.com (13.234.176.102)' can't be established.
+RSA key fingerprint is SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added 'github.com,13.234.176.102' (RSA) to the list of known hosts.
+Hi Eelgrey! You've successfully authenticated, but GitHub does not provide shell access.
+
+apurva.misra@IN01L0201000171 MINGW64 ~/.ssh
+
+
+
+
+************************** Renaming a clone pull from git diretylt *****************************\
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/DemoWebsiteGit/websiteDemo (MASTER)
+$ git remote -v
+origin  git@github.com:Eelgrey/websiteDemo.git (fetch)
+origin  git@github.com:Eelgrey/websiteDemo.git (push)
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/DemoWebsiteGit/websiteDemo (MASTER)
+$ cd ..
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/DemoWebsiteGit (master)
+$ ls -l
+total 0
+drwxr-xr-x 1 apurva.misra 1049089 0 Mar  4 15:52 websiteDemo/
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/DemoWebsiteGit (master)
+$ rm -rf websiteDemo/
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/DemoWebsiteGit (master)
+$ git clone git@github.com:Eelgrey/websiteDemo.git NewWebsiteDemo
+Cloning into 'NewWebsiteDemo'...
+remote: Enumerating objects: 5, done.
+remote: Counting objects: 100% (5/5), done.
+remote: Compressing objects: 100% (5/5), done.
+remote: Total 5 (delta 0), reused 0 (delta 0), pack-reused 0
+Receiving objects: 100% (5/5), 4.76 KiB | 2.38 MiB/s, done.
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/DemoWebsiteGit (master)
+$ ls -l
+total 0
+drwxr-xr-x 1 apurva.misra 1049089 0 Mar  4 15:55 NewWebsiteDemo/
+
+
+*********************** initialize a website ********************************
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/DemoWebsiteGit/NewWebsiteDemo (MASTER)
+$ cp -R C:/Users/apurva.misra/Downloads/initializr-verekia-4.0/initializr/* .
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/DemoWebsiteGit/NewWebsiteDemo (MASTER)
+$ ls -al
+total 55
+drwxr-xr-x 1 apurva.misra 1049089     0 Mar  4 16:09 ./
+drwxr-xr-x 1 apurva.misra 1049089     0 Mar  4 15:55 ../
+drwxr-xr-x 1 apurva.misra 1049089     0 Mar  4 15:55 .git/
+-rw-r--r-- 1 apurva.misra 1049089   301 Mar  4 15:55 .gitignore
+-rw-r--r-- 1 apurva.misra 1049089 11558 Mar  4 15:55 LICENSE
+-rw-r--r-- 1 apurva.misra 1049089    52 Mar  4 15:55 README.md
+-rw-r--r-- 1 apurva.misra 1049089  3959 Mar  4 16:09 apple-touch-icon.png
+-rw-r--r-- 1 apurva.misra 1049089   416 Mar  4 16:09 browserconfig.xml
+drwxr-xr-x 1 apurva.misra 1049089     0 Mar  4 16:09 css/
+-rw-r--r-- 1 apurva.misra 1049089   766 Mar  4 16:09 favicon.ico
+drwxr-xr-x 1 apurva.misra 1049089     0 Mar  4 16:09 fonts/
+drwxr-xr-x 1 apurva.misra 1049089     0 Mar  4 16:09 img/
+-rw-r--r-- 1 apurva.misra 1049089  5283 Mar  4 16:09 index.html
+drwxr-xr-x 1 apurva.misra 1049089     0 Mar  4 16:08 initializr/
+drwxr-xr-x 1 apurva.misra 1049089     0 Mar  4 16:09 js/
+-rw-r--r-- 1 apurva.misra 1049089  1854 Mar  4 16:09 tile-wide.png
+-rw-r--r-- 1 apurva.misra 1049089  3482 Mar  4 16:09 tile.png
+
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/DemoWebsiteGit/NewWebsiteDemo (MASTER)
+$ git status
+On branch MASTER
+Your branch is up to date with 'origin/MASTER'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        apple-touch-icon.png
+        browserconfig.xml
+        css/
+        favicon.ico
+        fonts/
+        index.html
+        js/
+        tile-wide.png
+        tile.png
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/DemoWebsiteGit/NewWebsiteDemo (MASTER)
+$ git add .
+warning: LF will be replaced by CRLF in browserconfig.xml.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in css/bootstrap-theme.css.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in css/bootstrap-theme.min.css.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in css/bootstrap.css.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in css/bootstrap.min.css.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in css/main.css.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in fonts/glyphicons-halflings-regular.svg.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in index.html.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in js/main.js.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in js/vendor/bootstrap.js.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in js/vendor/bootstrap.min.js.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in js/vendor/jquery-1.11.2.min.js.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in js/vendor/modernizr-2.8.3-respond-1.4.2.min.js.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in js/vendor/npm.js.
+The file will have its original line endings in your working directory
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/DemoWebsiteGit/NewWebsiteDemo (MASTER)
+$ git status
+On branch MASTER
+Your branch is up to date with 'origin/MASTER'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   apple-touch-icon.png
+        new file:   browserconfig.xml
+        new file:   css/bootstrap-theme.css
+        new file:   css/bootstrap-theme.css.map
+        new file:   css/bootstrap-theme.min.css
+        new file:   css/bootstrap.css
+        new file:   css/bootstrap.css.map
+        new file:   css/bootstrap.min.css
+        new file:   css/main.css
+        new file:   favicon.ico
+        new file:   fonts/glyphicons-halflings-regular.eot
+        new file:   fonts/glyphicons-halflings-regular.svg
+        new file:   fonts/glyphicons-halflings-regular.ttf
+        new file:   fonts/glyphicons-halflings-regular.woff
+        new file:   index.html
+        new file:   js/main.js
+        new file:   js/vendor/bootstrap.js
+        new file:   js/vendor/bootstrap.min.js
+        new file:   js/vendor/jquery-1.11.2.min.js
+        new file:   js/vendor/modernizr-2.8.3-respond-1.4.2.min.js
+        new file:   js/vendor/npm.js
+        new file:   tile-wide.png
+        new file:   tile.png
+
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/DemoWebsiteGit/NewWebsiteDemo (MASTER)
+$ git commit -m "This is first commit to website demo"
+[MASTER 8db5cc7] This is first commit to website demo
+ 23 files changed, 9539 insertions(+)
+ create mode 100644 apple-touch-icon.png
+ create mode 100644 browserconfig.xml
+ create mode 100644 css/bootstrap-theme.css
+ create mode 100644 css/bootstrap-theme.css.map
+ create mode 100644 css/bootstrap-theme.min.css
+ create mode 100644 css/bootstrap.css
+ create mode 100644 css/bootstrap.css.map
+ create mode 100644 css/bootstrap.min.css
+ create mode 100644 css/main.css
+ create mode 100644 favicon.ico
+ create mode 100644 fonts/glyphicons-halflings-regular.eot
+ create mode 100644 fonts/glyphicons-halflings-regular.svg
+ create mode 100644 fonts/glyphicons-halflings-regular.ttf
+ create mode 100644 fonts/glyphicons-halflings-regular.woff
+ create mode 100644 index.html
+ create mode 100644 js/main.js
+ create mode 100644 js/vendor/bootstrap.js
+ create mode 100644 js/vendor/bootstrap.min.js
+ create mode 100644 js/vendor/jquery-1.11.2.min.js
+ create mode 100644 js/vendor/modernizr-2.8.3-respond-1.4.2.min.js
+ create mode 100644 js/vendor/npm.js
+ create mode 100644 tile-wide.png
+ create mode 100644 tile.png
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/DemoWebsiteGit/NewWebsiteDemo (MASTER)
+$ git push origin MASTER
+Enumerating objects: 30, done.
+Counting objects: 100% (30/30), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (28/28), done.
+Writing objects: 100% (29/29), 273.93 KiB | 1.07 MiB/s, done.
+Total 29 (delta 3), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (3/3), done.
+To github.com:Eelgrey/websiteDemo.git
+   5dd43db..8db5cc7  MASTER -> MASTER
+
+
+************************ in case push does not work ************************
+git push // gives an error beyond vrs 2.0
+git config --global push.default simple
+
+
+********************** fetch/pull *****************************************
+// make changes in git repo directly is some file and then ::
+
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/DemoWebsiteGit/NewWebsiteDemo (MASTER)
+$ notepad++ README.md
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/DemoWebsiteGit/NewWebsiteDemo (MASTER)
+$ git commit -am "Changes made in the ReadMe.md file"
+[MASTER b740b24] Changes made in the ReadMe.md file
+ 1 file changed, 1 insertion(+)
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/DemoWebsiteGit/NewWebsiteDemo (MASTER)
+$ git status
+On branch MASTER
+Your branch is ahead of 'origin/MASTER' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/DemoWebsiteGit/NewWebsiteDemo (MASTER)
+$ git push
+To github.com:Eelgrey/websiteDemo.git
+ ! [rejected]        MASTER -> MASTER (fetch first)
+error: failed to push some refs to 'github.com:Eelgrey/websiteDemo.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/DemoWebsiteGit/NewWebsiteDemo (MASTER)
+$ git fetch
+remote: Enumerating objects: 5, done.
+remote: Counting objects: 100% (5/5), done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), 689 bytes | 29.00 KiB/s, done.
+From github.com:Eelgrey/websiteDemo
+   8db5cc7..7748f38  MASTER     -> origin/MASTER
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/DemoWebsiteGit/NewWebsiteDemo (MASTER)
+$ git pull
+Merge made by the 'recursive' strategy.
+ index.html | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/DemoWebsiteGit/NewWebsiteDemo (MASTER)
+$ git push~
+git: 'push~' is not a git command. See 'git --help'.
+
+The most similar command is
+        push
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/DemoWebsiteGit/NewWebsiteDemo (MASTER)
+$ git push
+Enumerating objects: 9, done.
+Counting objects: 100% (8/8), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (5/5), 648 bytes | 162.00 KiB/s, done.
+Total 5 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To github.com:Eelgrey/websiteDemo.git
+   7748f38..a18143b  MASTER -> MASTER
+
+***************************** git help config ***********************************
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/DemoWebsiteGit/NewWebsiteDemo (LocalBranch)
+$ git help config
+ // opens browser with dicument of help config
+
+********************** changing git repo name ****************************************
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/DemoWebsiteGit/NewWebsiteDemo (MASTER)
+$ git remote -v
+origin  git@github.com:Eelgrey/websiteDemo.git (fetch)
+origin  git@github.com:Eelgrey/websiteDemo.git (push)
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/DemoWebsiteGit/NewWebsiteDemo (MASTER)
+$ git remote set-url origin git@github.com:Eelgrey/NewName.git
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/DemoWebsiteGit/NewWebsiteDemo (MASTER)
+$ git remote -v
+origin  git@github.com:Eelgrey/NewName.git (fetch)
+origin  git@github.com:Eelgrey/NewName.git (push)
+
+
+
+
+**************************** info about origin *****************************************
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/DemoWebsiteGit/NewWebsiteDemo (MASTER)
+$ git remote show origin
+* remote origin
+  Fetch URL: git@github.com:Eelgrey/NewName.git
+  Push  URL: git@github.com:Eelgrey/NewName.git
+  HEAD branch: MASTER
+  Remote branch:
+    MASTER tracked
+  Local branch configured for 'git pull':
+    MASTER merges with remote MASTER
+  Local ref configured for 'git push':
+    MASTER pushes to MASTER (up to date)
+	
+******************************* show commit info *******************************************
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/DemoWebsiteGit/NewWebsiteDemo (MASTER)
+$ git show c62dd5b9de61555ddaf0a83fa090f43013292054
+commit c62dd5b9de61555ddaf0a83fa090f43013292054 (HEAD -> MASTER, origin/MASTER, origin/HEAD)
+Author: Eelgrey <64699688+Eelgrey@users.noreply.github.com>
+Date:   Thu Mar 4 17:25:10 2021 +0530
+
+    Making file as .md file
+
+diff --git a/NewAddedFile b/NewAddedFile.md
+similarity index 96%
+rename from NewAddedFile
+rename to NewAddedFile.md
+index 0ad57ac..cb65e4f 100644
+--- a/NewAddedFile
++++ b/NewAddedFile.md
+@@ -1,3 +1,5 @@
++# BTS Info
++
+ BTS (Korean: 방탄소년단; RR: Bangtan Sonyeondan), also known as the Bangtan Boys,
+ is a seven-member South Korean boy band that began formation in 2010 and debuted in 2013 under Big Hit Entertainment.
+ The septet—composed of RM, Jin, Suga, J-Hope, Jimin, V,
+ 
+ 
+ 
+ ************************* create/push local branch from git ****************************
+ apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/DemoWebsiteGit/NewWebsiteDemo (MASTER)
+$ git checkout -b LocalBranch
+Switched to a new branch 'LocalBranch'
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/DemoWebsiteGit/NewWebsiteDemo (LocalBranch)
+$ ls -al
+total 52
+drwxr-xr-x 1 apurva.misra 1049089     0 Mar  4 17:27 ./
+drwxr-xr-x 1 apurva.misra 1049089     0 Mar  4 15:55 ../
+drwxr-xr-x 1 apurva.misra 1049089     0 Mar  4 18:56 .git/
+-rw-r--r-- 1 apurva.misra 1049089   301 Mar  4 15:55 .gitignore
+-rw-r--r-- 1 apurva.misra 1049089 11558 Mar  4 15:55 LICENSE
+-rw-r--r-- 1 apurva.misra 1049089   351 Mar  4 17:27 NewAddedFile.md
+-rw-r--r-- 1 apurva.misra 1049089   107 Mar  4 16:25 README.md
+-rw-r--r-- 1 apurva.misra 1049089  3959 Mar  4 16:09 apple-touch-icon.png
+-rw-r--r-- 1 apurva.misra 1049089   416 Mar  4 16:09 browserconfig.xml
+drwxr-xr-x 1 apurva.misra 1049089     0 Mar  4 16:09 css/
+-rw-r--r-- 1 apurva.misra 1049089   766 Mar  4 16:09 favicon.ico
+drwxr-xr-x 1 apurva.misra 1049089     0 Mar  4 16:09 fonts/
+drwxr-xr-x 1 apurva.misra 1049089     0 Mar  4 16:09 img/
+-rw-r--r-- 1 apurva.misra 1049089  5411 Mar  4 16:39 index.html
+drwxr-xr-x 1 apurva.misra 1049089     0 Mar  4 16:09 js/
+-rw-r--r-- 1 apurva.misra 1049089  1854 Mar  4 16:09 tile-wide.png
+-rw-r--r-- 1 apurva.misra 1049089  3482 Mar  4 16:09 tile.png
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/DemoWebsiteGit/NewWebsiteDemo (LocalBranch)
+$ touch LocalFile
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/DemoWebsiteGit/NewWebsiteDemo (LocalBranch)
+$ notepad++ LocalFile
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/DemoWebsiteGit/NewWebsiteDemo (LocalBranch)
+$ ls -al
+total 53
+drwxr-xr-x 1 apurva.misra 1049089     0 Mar  4 18:56 ./
+drwxr-xr-x 1 apurva.misra 1049089     0 Mar  4 15:55 ../
+drwxr-xr-x 1 apurva.misra 1049089     0 Mar  4 18:56 .git/
+-rw-r--r-- 1 apurva.misra 1049089   301 Mar  4 15:55 .gitignore
+-rw-r--r-- 1 apurva.misra 1049089 11558 Mar  4 15:55 LICENSE
+-rw-r--r-- 1 apurva.misra 1049089    50 Mar  4 18:57 LocalFile
+-rw-r--r-- 1 apurva.misra 1049089   351 Mar  4 17:27 NewAddedFile.md
+-rw-r--r-- 1 apurva.misra 1049089   107 Mar  4 16:25 README.md
+-rw-r--r-- 1 apurva.misra 1049089  3959 Mar  4 16:09 apple-touch-icon.png
+-rw-r--r-- 1 apurva.misra 1049089   416 Mar  4 16:09 browserconfig.xml
+drwxr-xr-x 1 apurva.misra 1049089     0 Mar  4 16:09 css/
+-rw-r--r-- 1 apurva.misra 1049089   766 Mar  4 16:09 favicon.ico
+drwxr-xr-x 1 apurva.misra 1049089     0 Mar  4 16:09 fonts/
+drwxr-xr-x 1 apurva.misra 1049089     0 Mar  4 16:09 img/
+-rw-r--r-- 1 apurva.misra 1049089  5411 Mar  4 16:39 index.html
+drwxr-xr-x 1 apurva.misra 1049089     0 Mar  4 16:09 js/
+-rw-r--r-- 1 apurva.misra 1049089  1854 Mar  4 16:09 tile-wide.png
+-rw-r--r-- 1 apurva.misra 1049089  3482 Mar  4 16:09 tile.png
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/DemoWebsiteGit/NewWebsiteDemo (LocalBranch)
+$ git status
+On branch LocalBranch
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        LocalFile
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/DemoWebsiteGit/NewWebsiteDemo (LocalBranch)
+$ git add .
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/DemoWebsiteGit/NewWebsiteDemo (LocalBranch)
+$ git status
+On branch LocalBranch
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   LocalFile
+
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/DemoWebsiteGit/NewWebsiteDemo (LocalBranch)
+$ git commit -m "This is file from localBranch"
+[LocalBranch da13487] This is file from localBranch
+ 1 file changed, 1 insertion(+)
+ create mode 100644 LocalFile
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/DemoWebsiteGit/NewWebsiteDemo (LocalBranch)
+$ git status
+On branch LocalBranch
+nothing to commit, working tree clean
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/DemoWebsiteGit/NewWebsiteDemo (LocalBranch)
+$ git push -u origin LocalBranch
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 324 bytes | 108.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+remote:
+remote: Create a pull request for 'LocalBranch' on GitHub by visiting:
+remote:      https://github.com/Eelgrey/NewName/pull/new/LocalBranch
+remote:
+To github.com:Eelgrey/NewName.git
+ * [new branch]      LocalBranch -> LocalBranch
+Branch 'LocalBranch' set up to track remote branch 'LocalBranch' from 'origin'.
+
+
+************************* remove branch from git directly and the mergin in local ****************************
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/DemoWebsiteGit/NewWebsiteDemo (LocalBranch)
+$ git branch -a
+* LocalBranch
+  MASTER
+  remotes/origin/HEAD -> origin/MASTER
+  remotes/origin/LocalBranch
+  remotes/origin/MASTER
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/DemoWebsiteGit/NewWebsiteDemo (LocalBranch)
+$ git branch -a
+* LocalBranch
+  MASTER
+  remotes/origin/HEAD -> origin/MASTER
+  remotes/origin/LocalBranch
+  remotes/origin/MASTER
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/DemoWebsiteGit/NewWebsiteDemo (LocalBranch)
+$ git branch -d LocalBranch
+error: Cannot delete branch 'LocalBranch' checked out at 'D:/workspace/GitLocal/DemoWebsiteGit/NewWebsiteDemo'
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/DemoWebsiteGit/NewWebsiteDemo (LocalBranch)
+$ git checkout MASTER
+Switched to branch 'MASTER'
+Your branch is up to date with 'origin/MASTER'.
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/DemoWebsiteGit/NewWebsiteDemo (MASTER)
+$ git branch -d LocalBranch
+warning: deleting branch 'LocalBranch' that has been merged to
+         'refs/remotes/origin/LocalBranch', but not yet merged to HEAD.
+Deleted branch LocalBranch (was da13487).
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/DemoWebsiteGit/NewWebsiteDemo (MASTER)
+$ git branch -a
+* MASTER
+  remotes/origin/HEAD -> origin/MASTER
+  remotes/origin/LocalBranch
+  remotes/origin/MASTER
+
+*************************** update git branch in local using fetch ********************************
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/DemoWebsiteGit/NewWebsiteDemo (MASTER)
+$ git fetch -p
+From github.com:Eelgrey/NewName
+ - [deleted]         (none)     -> origin/LocalBranch
+remote: Enumerating objects: 9, done.
+remote: Counting objects: 100% (9/9), done.
+remote: Compressing objects: 100% (6/6), done.
+Unpacking objects: 100% (7/7), 1.55 KiB | 93.00 KiB/s, done.
+remote: Total 7 (delta 3), reused 3 (delta 1), pack-reused 0
+   c62dd5b..e03dc57  MASTER     -> origin/MASTER
+ * [new branch]      NewExample -> origin/NewExample
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/DemoWebsiteGit/NewWebsiteDemo (MASTER)
+$ git branch -a
+* MASTER
+  remotes/origin/HEAD -> origin/MASTER
+  remotes/origin/MASTER
+  remotes/origin/NewExample
+  
+  ******************** delete branch local and push to git hub ************************
+  apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/DemoWebsiteGit/NewWebsiteDemo (NewExample)
+$ git checkout GitBranch
+Switched to a new branch 'GitBranch'
+Branch 'GitBranch' set up to track remote branch 'GitBranch' from 'origin'.
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/DemoWebsiteGit/NewWebsiteDemo (GitBranch)
+$ git branch -d GitBranch
+error: Cannot delete branch 'GitBranch' checked out at 'D:/workspace/GitLocal/DemoWebsiteGit/NewWebsiteDemo'
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/DemoWebsiteGit/NewWebsiteDemo (GitBranch)
+$ git checkout MASTER
+Switched to branch 'MASTER'
+Your branch is behind 'origin/MASTER' by 2 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/DemoWebsiteGit/NewWebsiteDemo (MASTER)
+$ git branch -d GitBranch
+warning: deleting branch 'GitBranch' that has been merged to
+         'refs/remotes/origin/GitBranch', but not yet merged to HEAD.
+Deleted branch GitBranch (was a498b47).
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/DemoWebsiteGit/NewWebsiteDemo (MASTER)
+$ git push origin :GitBranch
+To github.com:Eelgrey/NewName.git
+ - [deleted]         GitBranch
+
+
+******************* rebase check in git ****************************************
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/DemoWebsiteGit/NewWebsiteDemo (MASTER)
+$ notepad++ index.html
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/DemoWebsiteGit/NewWebsiteDemo (MASTER)
+$ git commit -am "updating before Rebase check"
+[MASTER 35de5a9] updating before Rebase check
+ 1 file changed, 1 insertion(+), 4 deletions(-)
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/DemoWebsiteGit/NewWebsiteDemo (MASTER)
+$ git fetch
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/DemoWebsiteGit/NewWebsiteDemo (MASTER)
+$ ~git stat^C
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/DemoWebsiteGit/NewWebsiteDemo (MASTER)
+$ git status
+On branch MASTER
+Your branch is ahead of 'origin/MASTER' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/DemoWebsiteGit/NewWebsiteDemo (MASTER)
+$ git fetch
+remote: Enumerating objects: 5, done.
+remote: Counting objects: 100% (5/5), done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), 703 bytes | 33.00 KiB/s, done.
+From github.com:Eelgrey/NewName
+   e03dc57..04d6fe4  MASTER     -> origin/MASTER
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/DemoWebsiteGit/NewWebsiteDemo (MASTER)
+$ git status
+On branch MASTER
+Your branch and 'origin/MASTER' have diverged,
+and have 1 and 1 different commits each, respectively.
+  (use "git pull" to merge the remote branch into yours)
+
+nothing to commit, working tree clean
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/DemoWebsiteGit/NewWebsiteDemo (MASTER)
+$ git log --online
+fatal: unrecognized argument: --online
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/DemoWebsiteGit/NewWebsiteDemo (MASTER)
+$ git log --oneline
+35de5a9 (HEAD -> MASTER) updating before Rebase check
+e03dc57 Merge pull request #2 from Eelgrey/LocalBranch
+da13487 This is file from localBranch
+c62dd5b Making file as .md file
+aed06a7 Merge pull request #1 from Eelgrey/Eelgrey-BTSInfo
+7ecc780 Create NewAddedFile
+a18143b Merge branch 'MASTER' of github.com:Eelgrey/websiteDemo into MASTER
+b740b24 Changes made in the ReadMe.md file
+7748f38 Add title on index file
+8db5cc7 This is first commit to website demo
+5dd43db Initial commit
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/DemoWebsiteGit/NewWebsiteDemo (MASTER)
+$ git pull --rebase
+Successfully rebased and updated refs/heads/MASTER.
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/DemoWebsiteGit/NewWebsiteDemo (MASTER)
+$ git log --oneline
+95e71f3 (HEAD -> MASTER) updating before Rebase check
+04d6fe4 (origin/MASTER, origin/HEAD) Rebase check from git repo
+e03dc57 Merge pull request #2 from Eelgrey/LocalBranch
+da13487 This is file from localBranch
+c62dd5b Making file as .md file
+aed06a7 Merge pull request #1 from Eelgrey/Eelgrey-BTSInfo
+7ecc780 Create NewAddedFile
+a18143b Merge branch 'MASTER' of github.com:Eelgrey/websiteDemo into MASTER
+b740b24 Changes made in the ReadMe.md file
+7748f38 Add title on index file
+8db5cc7 This is first commit to website demo
+5dd43db Initial commit
+
+
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/DemoWebsiteGit/NewWebsiteDemo (MASTER)
+$ git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 325 bytes | 162.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To github.com:Eelgrey/NewName.git
+   04d6fe4..95e71f3  MASTER -> MASTER
+
+
+****************************** git graph **************************************
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/DemoWebsiteGit/NewWebsiteDemo (MASTER)
+$ git log --oneline --graph
+* 95e71f3 (HEAD -> MASTER, origin/MASTER, origin/HEAD) updating before Rebase check
+* 04d6fe4 Rebase check from git repo
+*   e03dc57 Merge pull request #2 from Eelgrey/LocalBranch
+|\
+| * da13487 This is file from localBranch
+|/
+* c62dd5b Making file as .md file
+*   aed06a7 Merge pull request #1 from Eelgrey/Eelgrey-BTSInfo
+|\
+| * 7ecc780 Create NewAddedFile
+|/
+*   a18143b Merge branch 'MASTER' of github.com:Eelgrey/websiteDemo into MASTER
+|\
+| * 7748f38 Add title on index file
+* | b740b24 Changes made in the ReadMe.md file
+|/
+* 8db5cc7 This is first commit to website demo
+* 5dd43db Initial commit
+
+
+
+*************************** change default branch **********************************
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/DemoWebsiteGit/NewWebsiteDemo (MASTER)
+$ cd ..
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/DemoWebsiteGit (master)
+$ ls -al
+total 8
+drwxr-xr-x 1 apurva.misra 1049089 0 Mar  4 15:55 ./
+drwxr-xr-x 1 apurva.misra 1049089 0 Mar  4 15:50 ../
+drwxr-xr-x 1 apurva.misra 1049089 0 Mar  5 17:16 NewWebsiteDemo/
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/DemoWebsiteGit (master)
+$ git clone git@github.com:Eelgrey/NewName.git
+Cloning into 'NewName'...
+remote: Enumerating objects: 65, done.
+remote: Counting objects: 100% (65/65), done.
+remote: Compressing objects: 100% (55/55), done.
+remote: Total 65 (delta 21), reused 41 (delta 9), pack-reused 0
+Receiving objects: 100% (65/65), 284.61 KiB | 90.00 KiB/s, done.
+Resolving deltas: 100% (21/21), done.
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/DemoWebsiteGit (master)
+$ ls -al
+total 12
+drwxr-xr-x 1 apurva.misra 1049089 0 Mar  5 17:49 ./
+drwxr-xr-x 1 apurva.misra 1049089 0 Mar  4 15:50 ../
+drwxr-xr-x 1 apurva.misra 1049089 0 Mar  5 17:49 NewName/
+drwxr-xr-x 1 apurva.misra 1049089 0 Mar  5 17:16 NewWebsiteDemo/
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/DemoWebsiteGit (master)
+$ rm -rf NewWebsiteDemo/
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/DemoWebsiteGit (master)
+$ cd NewName/
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/DemoWebsiteGit/NewName (MergeBranch)
+$ ls -al
+total 53
+drwxr-xr-x 1 apurva.misra 1049089     0 Mar  5 17:49 ./
+drwxr-xr-x 1 apurva.misra 1049089     0 Mar  5 17:50 ../
+drwxr-xr-x 1 apurva.misra 1049089     0 Mar  5 17:49 .git/
+-rw-r--r-- 1 apurva.misra 1049089   301 Mar  5 17:49 .gitignore
+-rw-r--r-- 1 apurva.misra 1049089 11558 Mar  5 17:49 LICENSE
+-rw-r--r-- 1 apurva.misra 1049089    77 Mar  5 17:49 LocalFile
+-rw-r--r-- 1 apurva.misra 1049089   351 Mar  5 17:49 NewAddedFile.md
+-rw-r--r-- 1 apurva.misra 1049089   107 Mar  5 17:49 README.md
+-rw-r--r-- 1 apurva.misra 1049089  3959 Mar  5 17:49 apple-touch-icon.png
+-rw-r--r-- 1 apurva.misra 1049089   428 Mar  5 17:49 browserconfig.xml
+drwxr-xr-x 1 apurva.misra 1049089     0 Mar  5 17:49 css/
+-rw-r--r-- 1 apurva.misra 1049089   766 Mar  5 17:49 favicon.ico
+drwxr-xr-x 1 apurva.misra 1049089     0 Mar  5 17:49 fonts/
+-rw-r--r-- 1 apurva.misra 1049089  5149 Mar  5 17:49 index.html
+drwxr-xr-x 1 apurva.misra 1049089     0 Mar  5 17:49 js/
+-rw-r--r-- 1 apurva.misra 1049089  1854 Mar  5 17:49 tile-wide.png
+-rw-r--r-- 1 apurva.misra 1049089  3482 Mar  5 17:49 tile.png
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/DemoWebsiteGit/NewName (MergeBranch)
+
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/DemoWebsiteGit/NewName (MergeBranch)
+$ git branch -a
+* MergeBranch
+  remotes/origin/HEAD -> origin/MergeBranch
+  remotes/origin/MergeBranch
+  remotes/origin/NewExample
+  remotes/origin/master
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/DemoWebsiteGit/NewName (MergeBranch)
+$ git fetch
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/DemoWebsiteGit/NewName (MergeBranch)
+$ git branch -a
+* MergeBranch
+  remotes/origin/HEAD -> origin/MergeBranch
+  remotes/origin/MergeBranch
+  remotes/origin/NewExample
+  remotes/origin/master
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/DemoWebsiteGit/NewName (MergeBranch)
+$ git checkout master
+Switched to a new branch 'master'
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+
+**************************** resolving conflicts *******************************************
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/DemoWebsiteGit/NewName (MergeBranch)
+$ notepad++ LocalFile
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/DemoWebsiteGit/NewName (MergeBranch)
+$ git commit -am "Update localFile with local chages"
+[MergeBranch 70b2306] Update localFile with local chages
+ 1 file changed, 3 insertions(+)
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/DemoWebsiteGit/NewName (MergeBranch)
+$ git fetch
+remote: Enumerating objects: 8, done.
+remote: Counting objects: 100% (8/8), done.
+remote: Compressing objects: 100% (5/5), done.
+remote: Total 5 (delta 2), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (5/5), 1.38 KiB | 40.00 KiB/s, done.
+From github.com:Eelgrey/NewName
+   95e71f3..f283c24  MergeBranch -> origin/MergeBranch
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/DemoWebsiteGit/NewName (MergeBranch)
+$ git status
+On branch MergeBranch
+Your branch and 'origin/MergeBranch' have diverged,
+and have 1 and 4 different commits each, respectively.
+  (use "git pull" to merge the remote branch into yours)
+
+nothing to commit, working tree clean
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/DemoWebsiteGit/NewName (MergeBranch)
+$ git mergetool
+No files need merging
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/DemoWebsiteGit/NewName (MergeBranch)
+$ git pull
+Auto-merging LocalFile
+CONFLICT (content): Merge conflict in LocalFile
+Automatic merge failed; fix conflicts and then commit the result.
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/DemoWebsiteGit/NewName (MergeBranch|MERGING)
+$ git mergetool
+Merging:
+LocalFile
+
+Normal merge conflict for 'LocalFile':
+  {local}: modified file
+  {remote}: modified file
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/DemoWebsiteGit/NewName (MergeBranch|MERGING)
+$ git pull^C
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/DemoWebsiteGit/NewName (MergeBranch|MERGING)
+$ git commit -am "resolving conflicts with p4"
+[MergeBranch 78440af] resolving conflicts with p4
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/DemoWebsiteGit/NewName (MergeBranch)
+$ git status
+On branch MergeBranch
+Your branch is ahead of 'origin/MergeBranch' by 2 commits.
+  (use "git push" to publish your local commits)
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        LocalFile.orig
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/DemoWebsiteGit/NewName (MergeBranch)
+$ git commit -am "Add changes"
+On branch MergeBranch
+Your branch is ahead of 'origin/MergeBranch' by 2 commits.
+  (use "git push" to publish your local commits)
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        LocalFile.orig
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/DemoWebsiteGit/NewName (MergeBranch)
+$ rm LocalFile.orig
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/DemoWebsiteGit/NewName (MergeBranch)
+$ git status
+On branch MergeBranch
+Your branch is ahead of 'origin/MergeBranch' by 2 commits.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/DemoWebsiteGit/NewName (MergeBranch)
+$ git push
+Enumerating objects: 10, done.
+Counting objects: 100% (10/10), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (6/6), 616 bytes | 308.00 KiB/s, done.
+Total 6 (delta 4), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (4/4), completed with 3 local objects.
+To github.com:Eelgrey/NewName.git
+   f283c24..78440af  MergeBranch -> MergeBranch
+
+
+******************************* tagging in GIT ************************************************
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/DemoWebsiteGit/NewName (MergeBranch)
+$ git tag
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/DemoWebsiteGit/NewName (MergeBranch)
+$ git tag stable master
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/DemoWebsiteGit/NewName (MergeBranch)
+$ git tag unstable MergeBranch
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/DemoWebsiteGit/NewName (MergeBranch)
+$ git tag
+stable
+unstable
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/DemoWebsiteGit/NewName (MergeBranch)
+$ git log --oneline --decorate
+78440af (HEAD -> MergeBranch, tag: unstable, origin/MergeBranch, origin/HEAD) resolving conflicts with p4
+70b2306 Update localFile with local chages
+f283c24 Update local via git
+a6fda25 Merge pull request #3 from Eelgrey/NewExample
+95e71f3 (tag: stable, origin/master, master) updating before Rebase check
+04d6fe4 Rebase check from git repo
+9c8f881 (origin/NewExample) Localchanges com~mitted to git
+e03dc57 Merge pull request #2 from Eelgrey/LocalBranch
+da13487 This is file from localBranch
+18eaddb Commit in example branch
+c62dd5b Making file as .md file
+aed06a7 Merge pull request #1 from Eelgrey/Eelgrey-BTSInfo
+7ecc780 Create NewAddedFile
+a18143b Merge branch 'MASTER' of github.com:Eelgrey/websiteDemo into MASTER
+b740b24 Changes made in the ReadMe.md file
+7748f38 Add title on index file
+8db5cc7 This is first commit to website demo
+5dd43db Initial commit
+
+
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/DemoWebsiteGit/NewName (MergeBranch)
+$ git tag -a v1.0-Alpha -m "This is the annotated alpha v1.0" a6fda25
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/DemoWebsiteGit/NewName (MergeBranch)
+$ git log --oneline --decorate
+78440af (HEAD -> MergeBranch, tag: unstable, origin/MergeBranch, origin/HEAD) resolving conflicts with p4
+70b2306 Update localFile with local chages
+f283c24 Update local via git
+a6fda25 (tag: v1.0-Alpha) Merge pull request #3 from Eelgrey/NewExample
+95e71f3 (tag: stable, origin/master, master) updating before Rebase check
+04d6fe4 Rebase check from git repo
+9c8f881 (origin/NewExample) Localchanges com~mitted to git
+e03dc57 Merge pull request #2 from Eelgrey/LocalBranch
+da13487 This is file from localBranch
+18eaddb Commit in example branch
+c62dd5b Making file as .md file
+aed06a7 Merge pull request #1 from Eelgrey/Eelgrey-BTSInfo
+7ecc780 Create NewAddedFile
+a18143b Merge branch 'MASTER' of github.com:Eelgrey/websiteDemo into MASTER
+b740b24 Changes made in the ReadMe.md file
+7748f38 Add title on index file
+8db5cc7 This is first commit to website demo
+5dd43db Initial commit
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/DemoWebsiteGit/NewName (MergeBranch)
+$ git tag -a v1.0-Beta -m "This is the annotated beta v1.0" 5dd43db
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/DemoWebsiteGit/NewName (MergeBranch)
+$ git tag -a v2.0-Alpha -m "This is the annotated alpha v2.0" da13487
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/DemoWebsiteGit/NewName (MergeBranch)
+$ git tag -a v1.0-Alpha -m "This is the annotated alpha v3.0" 04d6fe4~
+fatal: tag 'v1.0-Alpha' already exists
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/DemoWebsiteGit/NewName (MergeBranch)
+$ git tag -a v3.0-Alpha -m "This is the annotated alpha v3.0" 04d6fe4~
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/DemoWebsiteGit/NewName (MergeBranch)
+$ git log --oneline --decorate
+78440af (HEAD -> MergeBranch, tag: unstable, origin/MergeBranch, origin/HEAD) resolving conflicts with p4
+70b2306 Update localFile with local chages
+f283c24 Update local via git
+a6fda25 (tag: v1.0-Alpha) Merge pull request #3 from Eelgrey/NewExample
+95e71f3 (tag: stable, origin/master, master) updating before Rebase check
+04d6fe4 Rebase check from git repo
+9c8f881 (origin/NewExample) Localchanges com~mitted to git
+e03dc57 (tag: v3.0-Alpha) Merge pull request #2 from Eelgrey/LocalBranch
+da13487 (tag: v2.0-Alpha) This is file from localBranch
+18eaddb Commit in example branch
+c62dd5b Making file as .md file
+aed06a7 Merge pull request #1 from Eelgrey/Eelgrey-BTSInfo
+7ecc780 Create NewAddedFile
+a18143b Merge branch 'MASTER' of github.com:Eelgrey/websiteDemo into MASTER
+b740b24 Changes made in the ReadMe.md file
+7748f38 Add title on index file
+8db5cc7 This is first commit to website demo
+5dd43db (tag: v1.0-Beta) Initial commit
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/DemoWebsiteGit/NewName (MergeBranch)
+$ git show
+commit 78440af5d02ad512e97d4f9519191c6d556419cb (HEAD -> MergeBranch, tag: unstable, origin/MergeBranch, origin/HEAD)
+Merge: 70b2306 f283c24
+Author: Apurva <apurvamisra502@gmail.com>
+Date:   Fri Mar 5 18:02:06 2021 +0530
+
+    resolving conflicts with p4
+
+diff --cc LocalFile
+index 78fb24c,7689042..d67119d
+--- a/LocalFile
++++ b/LocalFile
+@@@ -2,4 -2,4 +2,4 @@@ This is my local file ... creted on loc
+  This is a rebase check.
+
+  ## conflict changes
+- Check conflict from local.
+ -Check conflict from git.
+++Merging resolved .
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/DemoWebsiteGit/NewName (MergeBranch)
+$ git tag
+stable // light weight tags
+unstable // light weight tags
+v1.0-Alpha // annotated tags
+v1.0-Beta     // annotated tags
+v2.0-Alpha    // annotated tags
+v3.0-Alpha    // annotated tags
+		
+******* show tag info ***********
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/DemoWebsiteGit/NewName (MergeBranch)
+$ git show v1.0-Alpha
+tag v1.0-Alpha
+Tagger: Apurva <apurvamisra502@gmail.com>
+Date:   Fri Mar 5 21:22:24 2021 +0530
+
+This is the annotated alpha v1.0
+
+commit a6fda25353228434887b9e609077844cdb64f42a (tag: v1.0-Alpha)
+Merge: 95e71f3 9c8f881
+Author: Eelgrey <64699688+Eelgrey@users.noreply.github.com>
+Date:   Fri Mar 5 17:56:06 2021 +0530
+
+    Merge pull request #3 from Eelgrey/NewExample
+
+    New example pull request
+
+********* push local tag to GIT repo ********
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/DemoWebsiteGit/NewName (MergeBranch)
+$ git status
+On branch MergeBranch
+Your branch is up to date with 'origin/MergeBranch'.
+
+nothing to commit, working tree clean
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/DemoWebsiteGit/NewName (MergeBranch)
+$ git pull
+Already up to date.
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/DemoWebsiteGit/NewName (MergeBranch)
+$ git push
+Everything up-to-date
+
+********** git push tags **************
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/DemoWebsiteGit/NewName (MergeBranch)
+$ git push origin stable
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
+To github.com:Eelgrey/NewName.git
+ * [new tag]         stable -> stable
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/DemoWebsiteGit/NewName (MergeBranch)
+$ git push --tags  // push all tags
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 624 bytes | 78.00 KiB/s, done.
+Total 4 (delta 0), reused 0 (delta 0), pack-reused 0
+To github.com:Eelgrey/NewName.git
+ * [new tag]         unstable -> unstable
+ * [new tag]         v1.0-Alpha -> v1.0-Alpha
+ * [new tag]         v1.0-Beta -> v1.0-Beta
+ * [new tag]         v2.0-Alpha -> v2.0-Alpha
+ * [new tag]         v3.0-Alpha -> v3.0-Alpha
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/DemoWebsiteGit/NewName (MergeBranch)
+$ git tag -d v2.0-Alpha
+Deleted tag 'v2.0-Alpha' (was d10bb99)
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/DemoWebsiteGit/NewName (MergeBranch)
+$ git tag -d v1.0-Alpha
+Deleted tag 'v1.0-Alpha' (was acbcbac)
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/DemoWebsiteGit/NewName (MergeBranch)
+$ git push origin :v1.0-Alpha
+To github.com:Eelgrey/NewName.git
+ - [deleted]         v1.0-Alpha
+ 
+ 
+ ******** floating tag ***************
+ apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/DemoWebsiteGit/NewName (MergeBranch)
+$ notepad++ NewAddedFile.md
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/DemoWebsiteGit/NewName (MergeBranch)
+$ git commit -am "Check floating tag"
+[MergeBranch e2e4c5b] Check floating tag
+ 1 file changed, 2 insertions(+)
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/DemoWebsiteGit/NewName (MergeBranch)
+$ git log --oneline --decorate
+e2e4c5b (HEAD -> MergeBranch) Check floating tag
+78440af (tag: unstable, origin/MergeBranch, origin/HEAD) resolving conflicts with p4
+70b2306 Update localFile with local chages
+f283c24 Update local via git
+a6fda25 Merge pull request #3 from Eelgrey/NewExample
+95e71f3 (tag: stable, origin/master, master) updating before Rebase check
+04d6fe4 Rebase check from git repo
+9c8f881 (origin/NewExample) Localchanges com~mitted to git
+e03dc57 (tag: v3.0-Alpha) Merge pull request #2 from Eelgrey/LocalBranch
+da13487 This is file from localBranch
+18eaddb Commit in example branch
+c62dd5b Making file as .md file
+aed06a7 Merge pull request #1 from Eelgrey/Eelgrey-BTSInfo
+7ecc780 Create NewAddedFile
+a18143b Merge branch 'MASTER' of github.com:Eelgrey/websiteDemo into MASTER
+b740b24 Changes made in the ReadMe.md file
+7748f38 Add title on index file
+8db5cc7 This is first commit to website demo
+5dd43db (tag: v1.0-Beta) Initial commit
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/DemoWebsiteGit/NewName (MergeBranch)
+$ git tag -f unstable e2e4c5b
+Updated tag 'unstable' (was 78440af)
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/DemoWebsiteGit/NewName (MergeBranch)
+$ git log --oneline --decorate
+e2e4c5b (HEAD -> MergeBranch, tag: unstable) Check floating tag
+78440af (origin/MergeBranch, origin/HEAD) resolving conflicts with p4
+70b2306 Update localFile with local chages
+f283c24 Update local via git
+a6fda25 Merge pull request #3 from Eelgrey/NewExample
+95e71f3 (tag: stable, origin/master, master) updating before Rebase check
+04d6fe4 Rebase check from git repo
+9c8f881 (origin/NewExample) Localchanges com~mitted to git
+e03dc57 (tag: v3.0-Alpha) Merge pull request #2 from Eelgrey/LocalBranch
+da13487 This is file from localBranch
+18eaddb Commit in example branch
+c62dd5b Making file as .md file
+aed06a7 Merge pull request #1 from Eelgrey/Eelgrey-BTSInfo
+7ecc780 Create NewAddedFile
+a18143b Merge branch 'MASTER' of github.com:Eelgrey/websiteDemo into MASTER
+b740b24 Changes made in the ReadMe.md file
+7748f38 Add title on index file
+8db5cc7 This is first commit to website demo
+5dd43db (tag: v1.0-Beta) Initial commit
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/DemoWebsiteGit/NewName (MergeBranch)
+$ git push origin MergeBranch
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 318 bytes | 53.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To github.com:Eelgrey/NewName.git
+   78440af..e2e4c5b  MergeBranch -> MergeBranch
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/DemoWebsiteGit/NewName (MergeBranch)
+$ git push origin unstable
+To github.com:Eelgrey/NewName.git
+ ! [rejected]        unstable -> unstable (already exists)
+error: failed to push some refs to 'github.com:Eelgrey/NewName.git'
+hint: Updates were rejected because the tag already exists in the remote.
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/DemoWebsiteGit/NewName (MergeBranch)
+$ git push --force origin unstable
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
+To github.com:Eelgrey/NewName.git
+ + 78440af...e2e4c5b unstable -> unstable (forced update)
+
+
+************** new release tag *************************************
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/DemoWebsiteGit/NewName (MergeBranch)
+$ git tag
+stable
+unstable
+v1.0-Beta
+v3.0-Alpha
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/DemoWebsiteGit/NewName (MergeBranch)
+$ git pull
+From github.com:Eelgrey/NewName
+ * [new tag]         V3.0       -> V3.0
+Already up to date.
+
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/DemoWebsiteGit/NewName (MergeBranch)
+$ git tag
+V3.0
+stable
+unstable
+v1.0-Beta
+v3.0-Alpha
+
+
+**************** comparison using expresion ***********************
+MergeBranch@{3days}
+HEAD@{3}
+HEAD-1/HEAD^
+
+***************** forking ****************************
+go to other repo --> click fork--> creates copy 
+--> clone repo into local--> create changes in a branch
+--> push the new branch into repo -->create pull request // this pulls your current chnges in the upstream or fork branch
+--> add comments and allow to pull changes #1637
+--> agin chnging and pushing the file on git will automatically update the fork repo with your new changes on reloading
+--> any user having write-in right on fork repo can accept your pull and merge
+--> status changes from open to close to merge
+
+*************** create upstream origin for fork repo*****************************
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/DemoWebsiteGit/starter-web (Feature)
+$ git remote -v
+origin  git@github.com:Eelgrey/starter-web.git (fetch)
+origin  git@github.com:Eelgrey/starter-web.git (push)
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/DemoWebsiteGit/starter-web (Feature)
+$ git remote add upstream git@github.com:scm-ninja/starter-web.git
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/DemoWebsiteGit/starter-web (Feature)
+$ git remote -v
+origin  git@github.com:Eelgrey/starter-web.git (fetch)
+origin  git@github.com:Eelgrey/starter-web.git (push)
+upstream        git@github.com:scm-ninja/starter-web.git (fetch)
+upstream        git@github.com:scm-ninja/starter-web.git (push)
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/DemoWebsiteGit/starter-web (Feature)
+$ git pull upstream master
+From github.com:scm-ninja/starter-web
+ * branch            master     -> FETCH_HEAD
+ * [new branch]      master     -> upstream/master
+Already up to date.
+
+
+***************** contributors ***************************
+Study about it.
+
+************************* creating gist ************************
+// gist is basically a code snippet/ file that works as an independent repo on its own 
+//works same as repo--> copy-->clone--delete--add files
+
+************************** issues ***************************
+--> issues : works on lable / milestone/ assigness
+--> label : to mark the issue/ can add or edit or delete label
+--> milestone : can mark milestone timelines | can edit /delete/ close/sort based on priority 
+
+******* close issue using terminal
+// this associates commits  no. to issues.  ----> not working
+//can refeernce issue id #ref_no to comments in commits to associate it to issue closed
+
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/DemoWebsiteGit/Gist_Demo (master)
+$ notepad++ .md
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/DemoWebsiteGit/Gist_Demo (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   .md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/DemoWebsiteGit/Gist_Demo (master)
+$ git commit -am "This is trial for issue closing from terminal, close #5"
+[master ea02c4c] This is trial for issue closing from terminal, close #5
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+
+******************* organization ***************************
+Create org like gist--> add name --> transfer repo to org
+--> fork account into ur own repo using fork technique
+
+******* upstream fork org to local 
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/DemoWebsiteGit/NewName (MergeBranch)
+$ git remote -v
+origin  git@github.com:Eelgrey/NewName.git (fetch)
+origin  git@github.com:Eelgrey/NewName.git (push)
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/DemoWebsiteGit/NewName (MergeBranch)
+$ git remote add upstrOrg git@github.com:OrgEelgrey/DemoGit.git~
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/DemoWebsiteGit/NewName (MergeBranch)
+$ git remote -v
+origin  git@github.com:Eelgrey/NewName.git (fetch)
+origin  git@github.com:Eelgrey/NewName.git (push)
+upstrOrg        git@github.com:OrgEelgrey/DemoGit.git~ (fetch)
+upstrOrg        git@github.com:OrgEelgrey/DemoGit.git~ (push)
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/DemoWebsiteGit/DemoGit (master)
+$ git fetch --all
+Fetching origin
+Fetching upstrOrg
+From github.com:OrgEelgrey/DemoGit
+ * [new branch]      master     -> upstrOrg/master
+ * [new branch]      shared     -> upstrOrg/shared
+
+apurva.misra@IN01L0201000171 MINGW64 /d/workspace/GitLocal/DemoWebsiteGit/DemoGit (master)
+$ git branch -a
+* master
+  remotes/origin/HEAD -> origin/master
+  remotes/origin/master
+  remotes/origin/shared
+  remotes/upstrOrg/master
+  remotes/upstrOrg/shared
+
+  
+  *********** command to tell to create shared for which origin *****************
+  
+ $git checkout -b shared origin/shared
+ 
+ ********************* teams *****************************
+ Create team in org url
+ --> serach members
+ --> multile owner can be for a team
+ --> invite/ cancel invite
+ --> manage teams/ permissions/ access
+ --> move people wothin teams / export info or org in json format
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

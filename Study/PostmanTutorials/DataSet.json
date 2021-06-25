@@ -1,0 +1,41 @@
+{
+	"id": "68a5ed24-c452-4ee8-858f-3f30584f6a9f",
+	"name": "CollectionRunner",
+	"timestamp": "2021-03-11T15:06:17.802Z",
+	"collection_id": "e6902aee-fb3d-476a-808c-6e99fb5f2417",
+	"folder_id": 0,
+	"environment_id": "0",
+	"totalPass": 0,
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "0978c84d-94f1-489d-8ceb-17a5f936a561",
+			"name": "New Request",
+			"time": 52,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				127,
+				52
+			],
+			"allTests": [
+				{},
+				{}
+			]
+		}
+	],
+	"count": 2,
+	"totalTime": 179,
+	"collection": {
+		"requests": [
+			{
+				"id": "0978c84d-94f1-489d-8ceb-17a5f936a561",
+				"method": "POST"
+			}
+		]
+	}
+}

@@ -1,0 +1,33 @@
+import io.restassured.RestAssured;
+import  static io.restassured.RestAssured.*;
+import components.ClassBody;
+import components.RawToJson;
+
+public class Basic {
+
+	public static void main(String[] args) {
+
+		//addAddress test script
+		RestAssured.baseURI="https://rahulshettyacademy.com";
+		String getAddDtls=given().log().all().queryParam("key", "qaclick123").header("Content-Type","application/json").
+		body(ClassBody.addAddressBody()).when().post("maps/api/place/add/json").
+		then().log().all().assertThat().statusCode(200).extract().response().asString();
+		String placeID=RawToJson.getjson(getAddDtls).getString("address");
+		System.out.println("Place ID as response :: "+placeID);
+		
+		//updateAddress test script
+		String newAdd="New Address, New Country";
+		RestAssured.baseURI="https://rahulshettyacademy.com";
+		String updateAddDtls=given().log().all().queryParam("key", "qaclick123").
+				queryParam("place_id",placeID).header("Content-Type","application/json").
+		body(ClassBody.updateAddBody(newAdd,placeID)).when().post("maps/api/place/add/json").
+		then().log().all().assertThat().statusCode(200).extract().response().asString();
+		
+		//getAddress test script
+		RestAssured.baseURI="https://rahulshettyacademy.com";
+		given().log().all().queryParam("key", "qaclick123")..
+		body(ClassBody.getAddBody()).when().post("maps/api/place/add/json").
+		then().log().all().assertThat().statusCode(200);
+	}
+
+}

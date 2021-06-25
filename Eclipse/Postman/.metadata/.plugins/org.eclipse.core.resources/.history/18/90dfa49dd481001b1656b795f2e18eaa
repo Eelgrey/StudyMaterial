@@ -1,0 +1,25 @@
+package components;
+
+public class ClassBody {
+	
+	public static String getAddBody() {
+		return "\"{\\r\\n\"\r\n"
+				+ "				+ \"  \\\"location\\\": {\\r\\n\"\r\n"
+				+ "				+ \"    \\\"lat\\\": -38.383490,\\r\\n\"\r\n"
+				+ "				+ \"    \\\"lng\\\": 33.427360\\r\\n\"\r\n"
+				+ "				+ \"  },\\r\\n\"\r\n"
+				+ "				+ \"  \\\"accuracy\\\": 50,\\r\\n\"\r\n"
+				+ "				+ \"  \\\"name\\\": \\\"Niwas\\\",\\r\\n\"\r\n"
+				+ "				+ \"  \\\"phone_number\\\": \\\"(+91) 983 893 3930\\\",\\r\\n\"\r\n"
+				+ "				+ \"  \\\"address\\\": \\\"29-A, side layout, cohen 09\\\",\\r\\n\"\r\n"
+				+ "				+ \"  \\\"types\\\": [\\r\\n\"\r\n"
+				+ "				+ \"    \\\"shoe park\\\",\\r\\n\"\r\n"
+				+ "				+ \"    \\\"shop\\\"\\r\\n\"\r\n"
+				+ "				+ \"  ],\\r\\n\"\r\n"
+				+ "				+ \"  \\\"website\\\": \\\"http://google.com\\\",\\r\\n\"\r\n"
+				+ "				+ \"  \\\"language\\\": \\\"IDOKOREAN-IK\\\"\\r\\n\"\r\n"
+				+ "				+ \"}\\r\\n\"\r\n"
+				+ "				+ \"\"";
+	}
+
+}

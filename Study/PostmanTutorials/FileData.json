@@ -1,0 +1,12 @@
+[
+{
+"email" : "eve.holt@reqres.in",
+"password" : "email1",
+"resource" : "api/register"
+},
+{
+"email" : "eve.holt@reqres.in",
+"password" : "email2",
+"resource" : "api/register"
+}
+]

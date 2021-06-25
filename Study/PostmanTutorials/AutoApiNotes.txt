@@ -1,0 +1,65 @@
+->Create a simple maven project
+->Add all rest assured jars in class path
+->import dependency in project
+->three parts of testing API
+  --> given() : you need to add the end point url/header/body/query param
+  --> when() : give conditions like type of request/ resource URI
+  --> then() : validate the response recieved from above given/when parts of API
+  --> .log().all() : added to log the response in console.
+  --> if exception occurs : response will be 
+  
+Exception in thread "main" java.lang.AssertionError: 1 expectation failed.
+Expected status code <209> but was <200>.
+  
+--> Example response:
+
+Request method:	POST
+Request URI:	https://rahulshettyacademy.com/maps/api/place/add/json?key=qaclick123
+Proxy:			<none>
+Request params:	<none>
+Query params:	key=qaclick123
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+				Content-Type=application/json; charset=UTF-8
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "location": {
+        "lat": -38.383490,
+        "lng": 33.427360
+    },
+    "accuracy": 50,
+    "name": "Niwas",
+    "phone_number": "(+91) 983 893 3930",
+    "address": "29-A, side layout, cohen 09",
+    "types": [
+        "shoe park",
+        "shop"
+    ],
+    "website": "http://google.com",
+    "language": "IDOKOREAN-IK"
+}
+HTTP/1.1 200 OK
+Date: Wed, 10 Mar 2021 17:21:19 GMT
+Server: Apache/2.4.18 (Ubuntu)
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: POST
+Access-Control-Max-Age: 3600
+Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With
+Content-Length: 194
+Keep-Alive: timeout=5, max=100
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+
+{
+    "status": "OK",
+    "place_id": "a893514e153daeae65d9f394f77e4e55",
+    "scope": "APP",
+    "reference": "16ad4c8cdec576cf3c60c6dfdff9fb2816ad4c8cdec576cf3c60c6dfdff9fb28",
+    "id": "16ad4c8cdec576cf3c60c6dfdff9fb28"
+}
+
+--> to use assertion add testNG jar file in project build path.
+

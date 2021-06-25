@@ -1,0 +1,19 @@
+import org.testng.annotations.Test;
+
+import components.ClassBody;
+import io.restassured.path.json.JsonPath;
+
+public class SumValidate {
+	
+	@Test
+	public static void sumOfCourses() {
+		JsonPath newPath= new JsonPath(ClassBody.getNestedJson());
+		int count=newPath.getInt("courses.size()");
+		int amt=0;
+		for(int i=0;i<count;i++) {
+			amt=amt+newPath.getInt("courses["+i+"].price";
+		}
+		
+	}
+
+}
